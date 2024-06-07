@@ -86,7 +86,7 @@ const handleKeyPress = (event) => {
       <div className="me-5 display-1">{minutes}</div>
       <div value={seconds} className="me-5 display-1">{seconds}</div>
       <div>
-         <button onClick={handleStopCounter} className="btn btn-primary me-3">Stop</button>
+         <button onClick={handleStopCounter} className="btn btn-danger me-3">Stop</button>
          <button onClick={startCounter} className="btn btn-primary me-3">Start</button>
          <button  onClick={()=> { restartHours (); restartMinutes(); restartSeconds()}} className="btn btn-secondary">Restart</button>
       </div>
