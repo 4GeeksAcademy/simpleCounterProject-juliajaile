@@ -55,13 +55,16 @@ function manageCountdown () {
   clearInterval(intervalId.current);
   setSeconds(userInput);
   intervalId.current = setInterval(() => {
-     setSeconds(prev => prev - 1);
-   }, 1000); 
-   if (setSeconds === 0) {
-    clearInterval(intervalId.current);
-    alert("Time's up!");
-   };
-};
+    setSeconds(prev => {
+      if (prev === 0) {
+        clearInterval(intervalId.current);
+        alert("Time's up!");
+        return 0;
+      }
+      return prev - 1;
+    });
+  }, 1000);
+}
 
 const startCounter = () => {
   clearInterval(intervalId.current);
